@@ -5,14 +5,17 @@ import tempfile
 import pandas as pd
 import fitz  # PyMuPDF
 import os
-from dotenv import load_dotenv
 
 # ---------- CONFIGURATION ----------
 st.set_page_config(page_title="Translator & Speech Generator")
 
 # Load environment variables
-load_dotenv()
-groq_api_key = os.getenv("GROQ_API_KEY")
+try:
+    groq_api_key = st.secrets["GROQ_API_KEY"]
+except Exception:
+    from dotenv import load_dotenv
+    load_dotenv()
+    groq_api_key = os.getenv("GROQ_API_KEY")
 
 if not groq_api_key:
     st.error("GROQ_API_KEY is not set. Please check your .env file.")
