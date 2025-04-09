@@ -1,7 +1,8 @@
 streamlit
-groq
 gTTS
 pandas
-PyMuPDF
+pymupdf
 python-dotenv
 openpyxl
+requests
+git+https://github.com/groq/groq-python.git
