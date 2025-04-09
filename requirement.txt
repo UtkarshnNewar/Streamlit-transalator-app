@@ -1,0 +1,7 @@
+streamlit
+groq
+gTTS
+pandas
+PyMuPDF
+python-dotenv
+openpyxl
